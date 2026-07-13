@@ -1,0 +1,13 @@
+DROP SCHEMA IF EXISTS "student" CASCADE;
+
+CREATE SCHEMA "student";
+
+DROP TABLE IF EXISTS "student"."students" CASCADE;
+
+CREATE TABLE "student"."students" (
+  "student_id" CHARACTER VARYING(20) PRIMARY KEY NOT NULL,
+  "student_name" CHARACTER VARYING(100) NOT NULL,
+  "grade" CHARACTER VARYING(20) NOT NULL,
+  "mobile_number" CHARACTER VARYING(20),
+  "school_name" CHARACTER VARYING(100) NOT NULL
+);
