@@ -36,7 +36,8 @@ Steps to locally run the required applications,
     
 
   - (Optional) Now, you may compound these runs into single unit as shown below,
-    ![JaCoCo_Report img missing](https://github.com/karthikaiselvan/skiply-system/blob/main/docs/img/img.jpg?raw=true)
+    <img width="862" height="271" alt="Screenshot 2026-07-16 154828" src="https://github.com/user-attachments/assets/c9a4e054-0858-4f82-b81d-d91412ebd7d5" />
+
 
   - Once all the services are up & running, then go to each service specific Swagger UI to execute the flows described below.
 
