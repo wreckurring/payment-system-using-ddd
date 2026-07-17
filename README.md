@@ -36,13 +36,21 @@ Steps to locally run the required applications,
     
 
   - (Optional) Now, you may compound these runs into single unit as shown below,
-    <img width="862" height="271" alt="Screenshot 2026-07-16 154828" src="https://github.com/user-attachments/assets/c9a4e054-0858-4f82-b81d-d91412ebd7d5" />
-
+    ![Compound Run](https://github.com/karthikairam/skiply-system/blob/main/docs/img/img.png?raw=true)
 
   - Once all the services are up & running, then go to each service specific Swagger UI to execute the flows described below.
 
     - Step 1: Register a student using student-service's post endpoint (Assumption: Student Id has to be provided to register).
-       - Sample request
+       - Request
+         
+         URL `POST  http://localhost:8081/v1/students`
+
+         Header
+         ```
+            accept: application/json
+            Content-Type: application/json
+         ```
+      
          ```json
            {
                "studentId": "98989899",
@@ -140,7 +148,7 @@ Steps to locally run the required applications,
 ## Design Decisions
 - To aggregate data from multiple service, the approach I took is to apply CQRS pattern. 
   - For instance, `receipt-service` needs data from `student-service` & `payment-service`. The flow is,
-    - `payment-service` emits an event to `kafka` with required information.
+    - `payment-service` emits an event to `kafka` with required information once payment is collected successfully.
     - `receipt-service` then consumes it and load the data in a format it needs (since the payment data is immutable 
     once created). It is a perfect fine to capture and store locally in a structure it needs.
     - Once payment related information is persisted in the `receipt-service`'s local DB, then it will request for 
