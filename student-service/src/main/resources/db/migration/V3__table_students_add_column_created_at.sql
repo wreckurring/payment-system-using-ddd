@@ -1,1 +1,0 @@
-ALTER TABLE "student"."students" ADD COLUMN IF NOT EXISTS "created_at" TIMESTAMP DEFAULT NOW();
